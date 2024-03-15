@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <div className='Header'>
-        <img src="/pokeball.png" alt="Pokeball" style={{ width:'55px', height:'55px', marginLeft: "10px", padding: "2.5px"}}/>
+        <img src="/pokeball.png" alt="Pokeball" style={{ width:'55px', height:'55px'}}/>
         <span style={{ marginLeft: '10px', color:'#333333', fontSize:'50px'}}>Pokedex</span>
       </div>      
     </header>

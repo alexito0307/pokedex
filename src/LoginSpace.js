@@ -6,8 +6,8 @@ import { gapi } from 'gapi-script';
 
 const clientId = "227800948030-kcfd1psosdgbrcieih4ft7n7m8jdjheo.apps.googleusercontent.com";
 
-const LoginSpace = () => {
-
+const LoginSpace = ({isLoggedIn, setIsLoggedIn}) => {
+  
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -25,7 +25,10 @@ const LoginSpace = () => {
       </div>
       <div className='LoginText'>
         <span style={{ color: '#e5c454', fontSize: '80px'}}>Bienvenido!</span>
-        <LoginButton />
+        <LoginButton 
+          isLoggedIn = {isLoggedIn}
+          setIsLoggedIn = {setIsLoggedIn}
+        />
         <p></p>
         <p></p>
         <LogoutButton />

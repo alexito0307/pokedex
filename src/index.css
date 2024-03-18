@@ -63,6 +63,14 @@ code {
   justify-content: center;
 }
 
+.headerLogoutButton
+{
+  float: right;
+  align-items: center;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
 .Content
 {
   width: 70%;

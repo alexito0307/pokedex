@@ -26,9 +26,6 @@ const LoginSpace = () => {
       <div className='LoginText'>
         <span style={{ color: '#e5c454', fontSize: '80px'}}>Bienvenido!</span>
         <LoginButton />
-        <p></p>
-        <p></p>
-        <LogoutButton />
       </div>
     </div>
   )

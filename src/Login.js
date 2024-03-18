@@ -1,14 +1,13 @@
 import GoogleLogin from "react-google-login";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserInfo from "./UserInfo";
+import { useGlobalState } from "./GlobalState";
 
 const clientId = "227800948030-kcfd1psosdgbrcieih4ft7n7m8jdjheo.apps.googleusercontent.com";
 
 function Login()
 {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const {userInfo, setUserInfo} = UserInfo();
+  const { isLoggedIn, setIsLoggedIn, userInfo, setUserInfo } = useGlobalState();
   let navigate = useNavigate();
 
   const onSuccess = (res) =>

@@ -67,17 +67,17 @@ code {
 {
   float: right;
   align-items: center;
+  margin-top: 5vh;
   margin-right: 50px;
-  margin-top: 20px;
 }
 
 .Content
 {
   width: 70%;
-  height: 65vh;
+  height: 60vh;
   background-color: #333333;
   margin: auto;
-  margin-top: 3vh;
+  margin-top: 2vh;
   border-radius: 15px;
 }
 
@@ -90,6 +90,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   font-size: 50px;
   color: #52D273;
 }

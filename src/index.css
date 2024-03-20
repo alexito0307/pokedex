@@ -56,7 +56,7 @@ code {
 .Header
 {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background-color: #E94F64;
   display: flex;
   align-items: center;
@@ -130,4 +130,18 @@ code {
   margin: auto;
   align-items: center;
   justify-content: center;
+}
+
+.FormsInput
+{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: large;
+  background-color: #333333;
+  color: #D6D8DE;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  width: 40vw;
+  height: 5vh;
 }

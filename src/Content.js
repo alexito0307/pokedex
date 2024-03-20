@@ -82,7 +82,7 @@ const Content = () => {
             {pokemon && <img src={pokemon.sprites.front_default} alt="Pokemon Image"/>}
           </div>
           <div className='PokemonInfo'>
-            <span style={{ color: '#468CDE', fontSize: '70px' }}>{pokemon.name.toUpperCase()}</span>
+            <span style={{ color: '#468CDE', fontSize: '4.375rem' }}>{pokemon.name.toUpperCase()}</span>
             <p>HP: {pokemon.stats[0]['base_stat']}</p>
             <p>Atack Damage: {pokemon.stats[1]['base_stat']}</p>
             <p>Defense: {pokemon.stats[2]['base_stat']}</p>

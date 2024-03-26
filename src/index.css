@@ -119,6 +119,7 @@ code {
 .PokemonInfo p
 {
   color: #D6D8DE;
+  font-size: 2vh;
 }
 
 .FormsSpace
@@ -146,3 +147,50 @@ code {
   width: 40vw;
   height: 5vh;
 }
+
+.FormsAddTeam
+{
+  margin-top: 1vh;
+  font-family: "Poppins", sans-serif;
+  color: #1F1F1F;
+  background-color: #E57255;
+  width: 10vw;
+  border-radius: 7px;
+  border: none;
+  transition-duration: 0.4s;
+  outline: none;
+}
+
+.FormsAddTeam:hover
+{
+  background-color: #333333;
+  color: #D6D8DE;
+}
+.FormsAddTeam:active
+{
+  transform: translateY(4px);
+}
+
+.FormsSeeTeam
+{
+  margin-top: 1vh;
+  font-family: "Poppins", sans-serif;
+  color: #1F1F1F;
+  background-color: #E57255;
+  width: 10vw;
+  border-radius: 7px;
+  border: none;
+  transition-duration: 0.4s;
+  outline: none;
+}
+
+.FormsSeeTeam:hover
+{
+  background-color: #333333;
+  color: #D6D8DE;
+}
+.FormsSeeTeam:active
+{
+  transform: translateY(4px);
+}
+

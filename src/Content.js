@@ -82,7 +82,7 @@ const Content = () => {
             {pokemon && <img src={pokemon.sprites.front_default} alt="Pokemon Image"/>}
           </div>
           <div className='PokemonInfo'>
-            <span style={{ color: '#468CDE', fontSize: '4.375rem' }}>{pokemon.name.toUpperCase()}</span>
+            <span style={{ color: '#468CDE', fontSize: '7vh' }}>{pokemon.name.toUpperCase()}</span>
             <p>HP: {pokemon.stats[0]['base_stat']}</p>
             <p>Atack Damage: {pokemon.stats[1]['base_stat']}</p>
             <p>Defense: {pokemon.stats[2]['base_stat']}</p>
@@ -94,12 +94,12 @@ const Content = () => {
       }
 
       <div className='FormsSpace' style={{ marginTop: '10px' }}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ display:'flex', flexDirection:'column', alignItems: 'center', height:'100%', justifyContent:'center'}}>
           <input type="text" value={inputValue} onChange={handleChange} placeholder='Pokémon...' className='FormsInput'/>
-          <button>
+          <button className='FormsAddTeam'>
             Agregar a mi equipo
           </button>
-          <button>
+          <button className='FormsSeeTeam'>
             Ver mi equipo
           </button>
         </form>

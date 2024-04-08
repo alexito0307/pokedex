@@ -115,7 +115,7 @@ const Content = () => {
         </div>
       }
 
-      {isLoading && initialState && !fetchSuccessful && <p style={{ backgroundColor: '#333333' , color: '#B3B8BC', textAlign: 'center', width: '70%', margin: 'auto', marginTop: '20px'}}>Loading..</p>}
+      {isLoading && initialState && !fetchSuccessful && <p style={{ backgroundColor: '#333333' , color: '#B3B8BC', textAlign: 'center', width: '70%', margin: 'auto', marginTop: '20px', marginLeft:'21%'}}>Loading..</p>}
 
       {!isLoading && initialState && pokemon && fetchSuccessful &&
         <div className='Content'>

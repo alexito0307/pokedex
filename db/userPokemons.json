@@ -3,8 +3,116 @@
     {
       "id": "114919629987761142499",
       "Equipo 3": {
-        "newTeamDesc": "Test"
+        "newTeamDesc": "Test",
+        "alakazam": {
+          "pokemonName": "alakazam",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png"
+        },
+        "rayquaza": {
+          "pokemonName": "rayquaza",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png"
+        }
+      },
+      "Equipo 1": {
+        "newTeamDesc": "Buenas noches mucho gusto",
+        "muk-alola": {
+          "pokemonName": "muk-alola",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10113.png"
+        },
+        "darumaka": {
+          "pokemonName": "darumaka",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/554.png"
+        },
+        "darumaka-galar": {
+          "pokemonName": "darumaka-galar",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10176.png"
+        },
+        "darmanitan-zen": {
+          "pokemonName": "darmanitan-zen",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10017.png"
+        }
       }
+    },
+    {
+      "id": "115278513976169533668",
+      "Equipo 1": {
+        "newTeamDesc": "El mejor equipo de todos",
+        "pikachu": {
+          "pokemonName": "pikachu",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        "bulbasaur": {
+          "pokemonName": "bulbasaur",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        },
+        "ivysaur": {
+          "pokemonName": "ivysaur",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+        },
+        "venusaur": {
+          "pokemonName": "venusaur",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+        },
+        "charmander": {
+          "pokemonName": "charmander",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+        },
+        "charmeleon": {
+          "pokemonName": "charmeleon",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+        },
+        "charizard": {
+          "pokemonName": "charizard",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+        },
+        "squirtle": {
+          "pokemonName": "squirtle",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+        },
+        "wartortle": {
+          "pokemonName": "wartortle",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
+        },
+        "caterpie": {
+          "pokemonName": "caterpie",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"
+        },
+        "butterfree": {
+          "pokemonName": "butterfree",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png"
+        },
+        "kartana": {
+          "pokemonName": "kartana",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/798.png"
+        },
+        "buzzwole": {
+          "pokemonName": "buzzwole",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/794.png"
+        },
+        "wishiwashi-school": {
+          "pokemonName": "wishiwashi-school",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10127.png"
+        },
+        "wishiwashi-solo": {
+          "pokemonName": "wishiwashi-solo",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/746.png"
+        },
+        "rayquaza": {
+          "pokemonName": "rayquaza",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png"
+        },
+        "dragapult": {
+          "pokemonName": "dragapult",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/887.png"
+        },
+        "walking-wake": {
+          "pokemonName": "walking-wake",
+          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png"
+        }
+      }
+    },
+    {
+      "id": "101018508942251696200"
     }
   ]
 }

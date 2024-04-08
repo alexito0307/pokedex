@@ -63,6 +63,12 @@ code {
   justify-content: center;
 }
 
+.Header a {
+  display: flex;
+  align-items: center; /* This ensures that the link's contents are also centered */
+  text-decoration: none;
+}
+
 .Footer
 {
   width: 100%;
@@ -73,7 +79,7 @@ code {
 {
   float: right;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 2vh;
   margin-right: 50px;
 }
 
@@ -173,7 +179,7 @@ code {
   font-family: "Poppins", sans-serif;
   color: #1F1F1F;
   background-color: #E57255;
-  width: 10vw;
+  width: 15vw;
   border-radius: 7px;
   border: none;
   transition-duration: 0.4s;
@@ -246,7 +252,7 @@ code {
 .PokemonTeamInfo
 {
   width: 90%;
-  height: 75vh;
+  height: 70vh;
   background-color: #333333;
   margin: auto;
   margin-top: 2vh;
@@ -270,7 +276,7 @@ code {
   width: 90%;
   margin: auto;
   border-radius: 15px;
-  height: 12vh;
+  height: 13.3vh;
   background-color: #656565;
   margin-top: 1.5vh;
   justify-content: center;

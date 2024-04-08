@@ -19,7 +19,7 @@ const PokemonTeam = () => {
   const [newTeamName, setNewTeamName] = useState();
   const [newTeamDesc, setNewTeamDesc] = useState();
   
-  const API_URL = `http://localhost:3500/accounts`
+  const API_URL = `http://localhost:3500/accounts`;
 
   useEffect(() => {
     if(isLoggedIn == false)
@@ -164,10 +164,10 @@ const PokemonTeam = () => {
       {!isLoading && (
       <div className='PokemonTeamInfo'>
         <div className='PokemonTeamSelector'>
-          {Object.entries(userTeams).map(([teamName, pokemons]) => {
+          {Object.entries(userTeams).map(([teamName, {newTeamDesc}]) => {
             if(teamName == 'id') return null;
             return (
-              <button key={teamName} className='PokemonTeamSidebarButton' onClick={() => handlePokemonTeamInfo(teamName)}>{teamName}</button>
+              <button key={teamName} className='PokemonTeamSidebarButton' onClick={() => handlePokemonTeamInfo(teamName)}>{teamName} - {newTeamDesc}</button>
             )
           })
           }
@@ -179,7 +179,7 @@ const PokemonTeam = () => {
             return (
               <div key={pokemonName} className='Pokemon'>
                 <span>{pokemonName}</span>
-                <img src={pokemonImage} alt={pokemonName} style={{ width:'250px', height: '250px'}}/>
+                <img src={pokemonImage} alt={pokemonName} style={{ width:'100%', height: '100%'}}/>
               </div>
             )
           }))}
@@ -192,7 +192,7 @@ const PokemonTeam = () => {
         {!optionSelected && (
           <div className='PokemonTeamFooterButtons'>
             <button className='PokemonTeamButton' onClick={handleCreateTeamScreen}>Crear Equipo</button>
-            <button className='PokemonTeamButton' style={{ marginTop:  '1vh'}} onClick={handleEditTeamScreen}>Editar Equipo Seleccionado</button>
+            <button className='PokemonTeamButton' style={{ marginTop:  '1vh'}} onClick={a}>Editar Equipo Seleccionado</button>
             <button className='PokemonTeamButton' style={{ marginTop: '1vh'}} onClick={handleDeleteTeam}>Borrar Equipo Seleccionado</button>
           </div>
         )}

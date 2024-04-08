@@ -6,6 +6,7 @@ import { gapi } from 'gapi-script';
 const clientId = "227800948030-kcfd1psosdgbrcieih4ft7n7m8jdjheo.apps.googleusercontent.com";
 
 const Footer = () => {
+
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -17,7 +18,7 @@ const Footer = () => {
     gapi.load('client:auth2', start);
   });
   return (
-    <div className='headerLogoutButton'>
+    <div className='footerLogoutButton'>
       <LogoutButton />
     </div>
   )

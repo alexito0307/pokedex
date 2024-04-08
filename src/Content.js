@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useGlobalState } from "./GlobalState";
 import apiRequest from './apiRequest';
 
 const Content = () => {
 
-  const [userPokemons, setUserPokemons] = useState([]);
-  const [initialState, setInitialState] = useState(false);
+  const { userInfo, currentTeam } = useGlobalState(); //Variables globales
+  const [initialState, setInitialState] = useState(false); 
   const [inputValue, setInputValue] = useState();
   const [fetchSuccessful, setFetchSuccessful] = useState(false);
+  const [fetchError, setFetchError] = useState();
   const [pokemon, setPokemon] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const API_URL = `https://pokeapi.co/api/v2/pokemon/${inputValue}`;
-  const localhost = "http://localhost:3500/db/userPokemons";
+  const localhost = 'http://localhost:3500/accounts';
+  let navigate = useNavigate();
+
 
   //FetchItem function to call API
   const fetchItem = async () => {
@@ -34,19 +39,51 @@ const Content = () => {
     }
   }
 
-  // const addPokemon = async (item) =>
-  // {
-  //   const newPokemon = item;
-  //   const postOptions = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(newPokemon)
-  //   }
-  //   const result = await apiRequest(API_URL, postOptions);
-  // }
+  const addPokemon = async () => {
+    const googleId = userInfo.googleId;
+    const team = `${currentTeam}`; 
+    const endpoint = `${localhost}/${googleId}`;
+    const pokemonName = pokemon.name;
+    let pokemonExists = false;
+    let userResponse = {};
+    //Fetching Item
+    try {
+      setIsLoading(true);
+      const response = await fetch(endpoint);
+      if (!response.ok) throw Error ('Did not received expected data');
+      userResponse = await response.json();
 
+      if (userResponse?.[team]?.hasOwnProperty(pokemonName)) {
+        pokemonExists = true;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+    if(!pokemonExists)
+    {
+      const pokemonImage = pokemon.sprites.front_default;
+      const pokemonToAdd = {pokemonName, pokemonImage};
+      const newTeamState = {
+        ...userResponse[team], 
+        [pokemonName]: pokemonToAdd 
+      };
+      const newPokemon = {[team]: newTeamState};
+      const postOptions = {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newPokemon) 
+      };
+      // Hacer la petición PATCH.
+      const result = await apiRequest(endpoint, postOptions); 
+      if (result) setFetchError(result);
+    }
+  }
+  
+  
   const handleChange = (e) =>
   {
     setInputValue(e.target.value);
@@ -61,7 +98,11 @@ const Content = () => {
       fetchItem();
     } else {
       console.log('Did not received expected data');
-    }
+    }   
+  }
+  const redirectToTeamScreen = () =>
+  {
+    navigate('/PokemonTeam');
   }
 
   return (
@@ -96,13 +137,13 @@ const Content = () => {
       <div className='FormsSpace' style={{ marginTop: '10px' }}>
         <form onSubmit={handleSubmit} style={{ display:'flex', flexDirection:'column', alignItems: 'center', height:'100%', justifyContent:'center'}}>
           <input type="text" value={inputValue} onChange={handleChange} placeholder='Pokémon...' className='FormsInput'/>
-          <button className='FormsAddTeam'>
+        </form>
+        <button className='FormsAddTeam' value={pokemon} onClick={addPokemon}>
             Agregar a mi equipo
           </button>
-          <button className='FormsSeeTeam'>
-            Ver mi equipo
-          </button>
-        </form>
+        <button className='FormsSeeTeam' value={pokemon} onClick={redirectToTeamScreen}>
+          Ver equipos
+        </button>
       </div>
     </main>
 

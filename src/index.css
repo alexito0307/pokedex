@@ -63,7 +63,13 @@ code {
   justify-content: center;
 }
 
-.headerLogoutButton
+.Footer
+{
+  width: 100%;
+  height: max-content;
+}
+
+.footerLogoutButton
 {
   float: right;
   align-items: center;
@@ -79,6 +85,18 @@ code {
   margin: auto;
   margin-top: 2vh;
   border-radius: 15px;
+}
+
+.ContentTeamSelector
+{
+  width: 10%;
+  height: 60%;
+  margin-top: 2vh;
+  margin-left: 5vh;
+  background-color: #656565;
+  float: left;
+  border-radius: 15px;
+  overflow-y: auto;
 }
 
 .InitialStateText
@@ -129,9 +147,11 @@ code {
   background-color: #656565;
   border-radius: 15px;
   display: flex;
-  margin: auto;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .FormsInput
@@ -150,7 +170,6 @@ code {
 
 .FormsAddTeam
 {
-  margin-top: 1vh;
   font-family: "Poppins", sans-serif;
   color: #1F1F1F;
   background-color: #E57255;
@@ -174,6 +193,7 @@ code {
 .FormsSeeTeam
 {
   margin-top: 1vh;
+  margin-bottom: 1vh;
   font-family: "Poppins", sans-serif;
   color: #1F1F1F;
   background-color: #E57255;
@@ -194,3 +214,173 @@ code {
   transform: translateY(4px);
 }
 
+.PokemonTeamButton
+{
+  font-family: "Poppins", sans-serif;
+  color: #1F1F1F;
+  background-color: #E57255;
+  width: 15vw;
+  border-radius: 7px;
+  border: none;
+  transition-duration: 0.4s;
+  outline: none;
+}
+
+.PokemonTeamButton:hover
+{
+  background-color: #333333;
+  color: #D6D8DE;
+}
+.PokemonTeamButton:active
+{
+  transform: translateY(4px);
+}
+
+.PokemonTeam
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: #1F1F1F;
+}
+
+.PokemonTeamInfo
+{
+  width: 90%;
+  height: 75vh;
+  background-color: #333333;
+  margin: auto;
+  margin-top: 2vh;
+  border-radius: 15px;
+  display: flex;
+}
+
+.PokemonTeamSelector
+{
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-color: #656565;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  overflow-y: auto;
+}
+
+.PokemonTeamFooter
+{
+  width: 90%;
+  margin: auto;
+  border-radius: 15px;
+  height: 12vh;
+  background-color: #656565;
+  margin-top: 1.5vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.PokemonTeamSidebarButton {
+  width: 100%;
+  height: 12.5%;
+  font-family: "Poppins", sans-serif;
+  background-color: #656565;
+  color: #fff;
+  text-align: left;
+  padding-left: 20px;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.PokemonTeamSidebarButton:hover {
+  background-color: #5a5a5a;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.PokemonTeamSidebarButton:active {
+  background-color: #4e4e4e;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+.PokemonTeamViewer {
+  width: 80%;
+  height: 95%;
+  float: right;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; 
+  padding: 2vh;
+}
+
+.Pokemon {
+  justify-content: center;
+  padding-top: 3vh;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  width: 15vw;
+  color: #D6D8DE;
+  border-color: #E57255;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 15px;
+  margin: 1vh;
+  transition: transform 0.3s ease; 
+  cursor: pointer; 
+}
+
+.Pokemon:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.PokemonTeamFooterButtons
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.PokemonTeamCreator
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.PokemonTeamFormInput
+{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: large;
+  background-color: #333333;
+  color: #D6D8DE;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  width: 40vw;
+  height: 3vh;  
+}
+.PokemonTeamCreatorForm
+{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.PokemonTeamEditor
+{
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

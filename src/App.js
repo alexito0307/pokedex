@@ -4,9 +4,10 @@ import Footer from "./Footer";
 import { useGlobalState } from "./GlobalState";
 import { redirect, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import TeamSelector from "./TeamSelector";
 
 function App() {
-  const { isLoggedIn, setIsLoggedIn, userInfo, setUserInfo } = useGlobalState();
+  const { isLoggedIn } = useGlobalState();
   let navigate = useNavigate();
   
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App" id="App">
       <Header />     
+      <TeamSelector />
       <Content /> 
       <Footer />
     </div>

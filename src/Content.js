@@ -64,7 +64,9 @@ const Content = () => {
     if(!pokemonExists)
     {
       const pokemonImage = pokemon.sprites.front_default;
-      const pokemonToAdd = {pokemonName, pokemonImage};
+      const pokemonAtack = pokemon.stats[1]['base_stat'];
+      const pokemonDefense = pokemon.stats[2]['base_stat'];
+      const pokemonToAdd = {pokemonName, pokemonImage, pokemonAtack, pokemonDefense};
       const newTeamState = {
         ...userResponse[team], 
         [pokemonName]: pokemonToAdd 

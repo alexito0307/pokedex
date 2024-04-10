@@ -234,6 +234,7 @@ const PokemonTeam = () => {
             return (
               <div key={pokemonName} className='Pokemon'>
                 <span>{pokemonName}</span>
+                <span>ATACK: {userTeams[currentTeam][pokemonName].pokemonAtack} DEFENSE: {userTeams[currentTeam][pokemonName].pokemonDefense}</span>
                 <img src={pokemonImage} alt={pokemonName} style={{ width:'100%', height: '100%'}}/>
               </div>
             )

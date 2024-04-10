@@ -2,35 +2,11 @@
   "accounts": [
     {
       "id": "114919629987761142499",
-      "Equipo 3": {
-        "newTeamDesc": "Test",
-        "alakazam": {
-          "pokemonName": "alakazam",
-          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png"
-        },
-        "rayquaza": {
-          "pokemonName": "rayquaza",
-          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png"
-        }
-      },
       "Equipo 1": {
-        "newTeamDesc": "Buenas noches mucho gusto",
-        "muk-alola": {
-          "pokemonName": "muk-alola",
-          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10113.png"
-        },
-        "darumaka": {
-          "pokemonName": "darumaka",
-          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/554.png"
-        },
-        "darumaka-galar": {
-          "pokemonName": "darumaka-galar",
-          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10176.png"
-        },
-        "darmanitan-zen": {
-          "pokemonName": "darmanitan-zen",
-          "pokemonImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10017.png"
-        }
+        "newTeamDesc": "Lololololol"
+      },
+      "Equipo 2": {
+        "newTeamDesc": "Lololol"
       }
     },
     {

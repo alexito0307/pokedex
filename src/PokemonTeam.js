@@ -110,10 +110,6 @@ const PokemonTeam = () => {
     setCreateNewTeam(true);
   }
 
-  const handleEditTeam = () => {
-
-  }
-
   const handleEditTeamScreen = () => {
     setOptionSelected(true);
     setEditCurrentTeam(true);
@@ -148,15 +144,74 @@ const PokemonTeam = () => {
       console.error('Error, could not delete team:', error);
     }
   };
+
+  const handlePokemonDelete = async (pokemonName) => {
+    const newUserTeams = JSON.parse(JSON.stringify(userTeams));
+    delete newUserTeams[currentTeam][pokemonName];
+    const googleId = userInfo.googleId;
+    const endpoint = `${API_URL}/${googleId}`;
+  
+    try {
+      // Aquí se asume que el endpoint de la API es capaz de manejar una actualización específica para el equipo
+      const response = await fetch(endpoint, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUserTeams), // Envía el equipo actualizado sin el Pokémon borrado
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to delete the pokemon');
+      }
+      setUserTeams(newUserTeams);
+    } catch (error) {
+      console.error('Error deleting pokemon:', error);
+    }
+  };
+  
+  const changeTeamNameandDesc = async (e) => {
+    e.preventDefault(); 
+  
+    const formData = new FormData(e.target);
+    const newTeamName = formData.get('newTeamName').trim();
+    const newTeamDesc = formData.get('newTeamDesc').trim();
+    const updatedUserTeams = {...userTeams}; 
+  
+    
+    if (newTeamName && newTeamName !== currentTeam && newTeamName !== "") {
+      updatedUserTeams[newTeamName] = { ...updatedUserTeams[currentTeam] };
+      if (newTeamDesc !== "") { 
+        updatedUserTeams[newTeamName].newTeamDesc = newTeamDesc;
+      }
+      delete updatedUserTeams[currentTeam]; 
+    } else if (newTeamDesc !== "") { 
+      updatedUserTeams[currentTeam].newTeamDesc = newTeamDesc;
+    }
+  
+    try {
+      const googleId = userInfo.googleId;
+      const response = await fetch(`${API_URL}/${googleId}`, {
+        method: 'PUT', 
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedUserTeams), 
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to update the team');
+      }
+      setUserTeams(updatedUserTeams);
+      setCurrentTeam(newTeamName || currentTeam); 
+    } catch (error) {
+      console.error('Error updating team:', error);
+    }
+    setEditCurrentTeam(false);
+    setOptionSelected(false);
+  };
+  
   
 
-
-
-
-  const a = () => {
-    console.log(userTeams[currentTeam].newTeamDesc);
-  }
-
+  
   return (
     <div className='PokemonTeam'>
       <Header />
@@ -173,11 +228,22 @@ const PokemonTeam = () => {
           }
         </div>
         <div className='PokemonTeamViewer'>
-          {teamSelected && 
+          {teamSelected && !editCurrentTeam &&
             (Object.entries(userTeams[currentTeam]).map(([pokemonName, {pokemonImage}]) => {
               if(pokemonName == 'newTeamDesc') return null;
             return (
               <div key={pokemonName} className='Pokemon'>
+                <span>{pokemonName}</span>
+                <img src={pokemonImage} alt={pokemonName} style={{ width:'100%', height: '100%'}}/>
+              </div>
+            )
+          }))}
+
+          {teamSelected && editCurrentTeam && 
+            (Object.entries(userTeams[currentTeam]).map(([pokemonName, {pokemonImage}]) => {
+              if(pokemonName == 'newTeamDesc') return null;
+            return (
+              <div key={pokemonName} className='Pokemon' onClick={() => handlePokemonDelete(pokemonName)}>
                 <span>{pokemonName}</span>
                 <img src={pokemonImage} alt={pokemonName} style={{ width:'100%', height: '100%'}}/>
               </div>
@@ -192,7 +258,7 @@ const PokemonTeam = () => {
         {!optionSelected && (
           <div className='PokemonTeamFooterButtons'>
             <button className='PokemonTeamButton' onClick={handleCreateTeamScreen}>Crear Equipo</button>
-            <button className='PokemonTeamButton' style={{ marginTop:  '1vh'}} onClick={a}>Editar Equipo Seleccionado</button>
+            <button className='PokemonTeamButton' style={{ marginTop:  '1vh'}} onClick={handleEditTeamScreen}>Editar Equipo Seleccionado</button>
             <button className='PokemonTeamButton' style={{ marginTop: '1vh'}} onClick={handleDeleteTeam}>Borrar Equipo Seleccionado</button>
           </div>
         )}
@@ -212,9 +278,9 @@ const PokemonTeam = () => {
         {editCurrentTeam && (
           <div className='PokemonTeamEditor'>
             <p style={{float:'left', marginRight:'5vh', color:'', fontSize:'3vh'}}>Seleccione los pokemones que quiere borrar</p>
-            <form className='PokemonTeamCreatorForm' style={{ float:'right'}}>
-              <input type="text" className='PokemonTeamFormInput'/>
-              <input type="text" className='PokemonTeamFormInput' style={{ marginTop: '1vh' }}/>
+            <form className='PokemonTeamCreatorForm' style={{ float:'right'}} onSubmit={changeTeamNameandDesc}>
+              <input type="text" className='PokemonTeamFormInput' placeholder='Ingrese el nuevo nombre del equipo (deje en blanco si lo quiere dejar asi)' name='newTeamName'/>
+              <input type="text" className='PokemonTeamFormInput' style={{ marginTop: '1vh' }} placeholder='Ingrese la nueva descripcion del equipo (deje en blanco si lo quiere dejar asi)' name='newTeamDesc'/>
               <button className='PokemonTeamButton' style={{ marginTop:'1vh' }} action="submit" >Guardar cambios</button>
             </form>
           </div>
